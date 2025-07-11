@@ -1,0 +1,64 @@
+.logs-navigation {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.logs-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 0.5rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tab-button {
+  background: transparent;
+  border: none;
+  color: #b4b7bd;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+
+.tab-button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  color: #d0d2d6;
+}
+
+.tab-button.active {
+  background: linear-gradient(135deg, #7367f0 0%, #9c8cfc 100%);
+  opacity: 1;
+  color: white;
+  box-shadow: 0 4px 12px rgba(115, 103, 240, 0.3);
+}
+
+.tab-content {
+  min-height: 600px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .logs-navigation {
+    padding: 0.5rem;
+  }
+
+  .logs-tabs {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .tab-button {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+} 
