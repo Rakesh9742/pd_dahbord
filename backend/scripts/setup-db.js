@@ -99,7 +99,7 @@ async function setupDatabase() {
         block_name VARCHAR(100),
         experiment VARCHAR(100),
         RTL_tag VARCHAR(100),
-        user_id INT NOT NULL,
+        user_name VARCHAR(100) NOT NULL,
         run_directory TEXT,
         run_end_time DATETIME,
         stage VARCHAR(100),
@@ -127,7 +127,6 @@ async function setupDatabase() {
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
         FOREIGN KEY (project_id) REFERENCES projects(id),
         FOREIGN KEY (domain_id) REFERENCES domains(id),
-        FOREIGN KEY (user_id) REFERENCES users(id),
         FOREIGN KEY (collected_by) REFERENCES users(id)
       );
     `;

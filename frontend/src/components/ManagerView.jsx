@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import './ManagerView.css';
 
-const ManagerView = ({ user }) => {
+const ManagerView = ({ user, projectFilters = {} }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [filters, setFilters] = useState({
     block_name: '',
     rtl_tag: '',
-    block_health_index: ''
+    block_health_index: '',
+    domain_id: '',
+    project_id: ''
   });
   const [pagination, setPagination] = useState({
     current: 1,
@@ -24,7 +26,7 @@ const ManagerView = ({ user }) => {
     const fetchOptions = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch('/api/data/filter-options', {
+        const response = await fetch('http://localhost:5000/api/data/filter-options', {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
@@ -35,7 +37,7 @@ const ManagerView = ({ user }) => {
           setBlockNameOptions(result.blocks || []);
           // For RTL tags, fetch unique RTL_tag values from the data
           // We'll fetch all unique RTL_tag values from the backend
-          const rtlRes = await fetch('/api/data/manager-data?limit=1000', {
+          const rtlRes = await fetch('http://localhost:5000/api/data/manager-data?limit=1000', {
             headers: {
               'Authorization': `Bearer ${token}`,
               'Content-Type': 'application/json'
@@ -70,13 +72,18 @@ const ManagerView = ({ user }) => {
       setLoading(true);
       const token = localStorage.getItem('token');
       
+      // Only include filters that have a value
+      const filterParams = Object.fromEntries(
+        Object.entries(filters).filter(([_, v]) => v)
+      );
+      
       const queryParams = new URLSearchParams({
-        ...filters,
+        ...filterParams,
         limit: pagination.limit,
         offset: (pagination.current - 1) * pagination.limit
       });
 
-      const response = await fetch(`/api/data/manager-data?${queryParams}`, {
+      const response = await fetch(`http://localhost:5000/api/data/manager-data?${queryParams}`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -101,8 +108,35 @@ const ManagerView = ({ user }) => {
   };
 
   useEffect(() => {
-    fetchManagerData();
+    // Only fetch data if we have meaningful filters or if this is the initial load
+    if (filters.domain_id || filters.project_id || filters.block_name || filters.rtl_tag || filters.block_health_index) {
+      fetchManagerData();
+    } else if (!loading && data.length === 0) {
+      // Initial load - fetch all data
+      fetchManagerData();
+    }
   }, [filters, pagination.current]);
+
+  // Update filters when projectFilters prop changes
+  useEffect(() => {
+    setFilters(prevFilters => {
+      const newFilters = {
+        ...prevFilters,
+        domain_id: projectFilters?.domain_id || '',
+        project_id: projectFilters?.project_id || ''
+      };
+      // Only update if the filters actually changed
+      if (prevFilters.domain_id !== newFilters.domain_id || prevFilters.project_id !== newFilters.project_id) {
+        setFilterInputs(newFilters);
+        return newFilters;
+      }
+      return prevFilters;
+    });
+  }, [projectFilters]);
+
+  // Debug: Log when component mounts
+  useEffect(() => {
+  }, []);
 
   const handleFilterChange = (key, value) => {
     setFilters(prev => ({ ...prev, [key]: value }));
@@ -117,7 +151,9 @@ const ManagerView = ({ user }) => {
     setFilters({
       block_name: '',
       rtl_tag: '', // Clear RTL Tag filter
-      block_health_index: '' // Clear Block Status filter
+      block_health_index: '', // Clear Block Status filter
+      domain_id: '',
+      project_id: ''
     });
     setPagination(prev => ({ ...prev, current: 1 }));
   };
@@ -212,7 +248,7 @@ const ManagerView = ({ user }) => {
   });
 
   return (
-    <div className="manager-view">
+    <div className={`manager-view ${(projectFilters.project_id || projectFilters.domain_id) ? 'filters-active' : ''}`}>
       {/* Header Section */}
       <div className="view-header">
         <div className="header-content">
@@ -250,8 +286,7 @@ const ManagerView = ({ user }) => {
             value={filterInputs.block_health_index}
             onChange={e => {
               handleInputChange('block_health_index', e.target.value);
-              setFilters(prev => ({ ...prev, block_health_index: e.target.value }));
-              setPagination(prev => ({ ...prev, current: 1 }));
+              handleFilterChange('block_health_index', e.target.value);
             }}
             style={{ padding: '8px 12px', borderRadius: 8, border: '1px solid #e2e8f0', fontSize: 14 }}
           >
@@ -268,8 +303,7 @@ const ManagerView = ({ user }) => {
             value={filterInputs.rtl_tag}
             onChange={e => {
               handleInputChange('rtl_tag', e.target.value);
-              setFilters(prev => ({ ...prev, rtl_tag: e.target.value }));
-              setPagination(prev => ({ ...prev, current: 1 }));
+              handleFilterChange('rtl_tag', e.target.value);
             }}
             style={{ padding: '8px 12px', borderRadius: 8, border: '1px solid #e2e8f0', fontSize: 14 }}
           >
@@ -285,8 +319,7 @@ const ManagerView = ({ user }) => {
             value={filterInputs.block_name}
             onChange={e => {
               handleInputChange('block_name', e.target.value);
-              setFilters(prev => ({ ...prev, block_name: e.target.value }));
-              setPagination(prev => ({ ...prev, current: 1 }));
+              handleFilterChange('block_name', e.target.value);
             }}
             style={{ padding: '8px 12px', borderRadius: 8, border: '1px solid #e2e8f0', fontSize: 14 }}
           >

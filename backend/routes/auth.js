@@ -1,10 +1,46 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const multer = require('multer');
+const path = require('path');
+const fs = require('fs');
 const { pool } = require('../config/database');
 const auth = require('../middleware/auth');
 
 const router = express.Router();
+
+// Configure multer for file uploads
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    const uploadDir = 'uploads/profile-pictures';
+    if (!fs.existsSync(uploadDir)) {
+      fs.mkdirSync(uploadDir, { recursive: true });
+    }
+    cb(null, uploadDir);
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+    cb(null, 'profile-' + req.user.userId + '-' + uniqueSuffix + path.extname(file.originalname));
+  }
+});
+
+const upload = multer({
+  storage: storage,
+  limits: {
+    fileSize: 5 * 1024 * 1024 // 5MB limit
+  },
+  fileFilter: function (req, file, cb) {
+    const allowedTypes = /jpeg|jpg|png|gif/;
+    const extname = allowedTypes.test(path.extname(file.originalname).toLowerCase());
+    const mimetype = allowedTypes.test(file.mimetype);
+    
+    if (mimetype && extname) {
+      return cb(null, true);
+    } else {
+      cb(new Error('Only image files are allowed!'));
+    }
+  }
+});
 
 // Register route (for creating admin user)
 router.post('/register', async (req, res) => {
@@ -110,6 +146,15 @@ router.post('/login', async (req, res) => {
     // Return user data (without password) and token
     const { password: _, ...userWithoutPassword } = user;
     
+    // Add project_ids for customers
+    if (user.role_name === 'Customer') {
+      const [projectRows] = await pool.execute(
+        'SELECT project_id FROM project_users WHERE user_id = ? AND is_active = 1',
+        [user.id]
+      );
+      userWithoutPassword.project_ids = projectRows.map(row => row.project_id);
+    }
+    
     res.json({
       message: 'Login successful',
       user: userWithoutPassword,
@@ -122,11 +167,24 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// Get current user
-router.get('/me', auth, async (req, res) => {
+// Upload profile picture
+router.post('/upload-profile-picture', auth, upload.single('profilePicture'), async (req, res) => {
   try {
+    if (!req.file) {
+      return res.status(400).json({ message: 'No file uploaded' });
+    }
+
+    const profilePicturePath = `/uploads/profile-pictures/${req.file.filename}`;
+
+    // Update user's profile picture in database
+    await pool.execute(
+      'UPDATE users SET profile_picture = ? WHERE id = ?',
+      [profilePicturePath, req.user.userId]
+    );
+
+    // Get updated user data
     const [users] = await pool.execute(
-      'SELECT u.id, u.name, u.email, r.role_name FROM users u JOIN user_roles r ON u.role_id = r.id WHERE u.id = ?',
+      'SELECT u.*, r.role_name FROM users u JOIN user_roles r ON u.role_id = r.id WHERE u.id = ?',
       [req.user.userId]
     );
 
@@ -134,7 +192,44 @@ router.get('/me', auth, async (req, res) => {
       return res.status(404).json({ message: 'User not found' });
     }
 
-    res.json({ user: users[0] });
+    const user = users[0];
+    const { password: _, ...userWithoutPassword } = user;
+
+    res.json({
+      message: 'Profile picture uploaded successfully',
+      user: userWithoutPassword
+    });
+
+  } catch (error) {
+    console.error('Profile picture upload error:', error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+// Get current user
+router.get('/me', auth, async (req, res) => {
+  try {
+    const [users] = await pool.execute(
+      'SELECT u.id, u.name, u.email, u.profile_picture, r.role_name FROM users u JOIN user_roles r ON u.role_id = r.id WHERE u.id = ?',
+      [req.user.userId]
+    );
+
+    if (users.length === 0) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    const user = users[0];
+
+    // Add project_ids for customers
+    if (user.role_name === 'Customer') {
+      const [projectRows] = await pool.execute(
+        'SELECT project_id FROM project_users WHERE user_id = ? AND is_active = 1',
+        [user.id]
+      );
+      user.project_ids = projectRows.map(row => row.project_id);
+    }
+
+    res.json({ user });
   } catch (error) {
     console.error('Get user error:', error);
     res.status(500).json({ message: 'Server error' });

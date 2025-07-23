@@ -48,6 +48,10 @@ function App() {
     setIsAuthenticated(false);
   };
 
+  const handleUserUpdate = (updatedUser: User) => {
+    setUser(updatedUser);
+  };
+
   if (loading) {
     return (
       <div className="App">
@@ -64,7 +68,7 @@ function App() {
       {!isAuthenticated ? (
         <Login onLogin={handleLogin} />
       ) : (
-        <Dashboard user={user} onLogout={handleLogout} />
+        <Dashboard user={user} onLogout={handleLogout} onUserUpdate={handleUserUpdate} />
       )}
     </div>
   );

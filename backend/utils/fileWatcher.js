@@ -1,12 +1,12 @@
 const fs = require('fs');
 const path = require('path');
 const chokidar = require('chokidar');
-const CSVProcessor = require('./csvProcessor');
+const processCSVFile = require('./csvProcessor');
+const getCSVFiles = require('./getCSVFiles');
 
 class FileWatcher {
   constructor(db) {
     this.db = db;
-    this.csvProcessor = new CSVProcessor(db);
     this.watchedDir = path.join(__dirname, '../data_csv');
     this.processedFiles = new Set();
     this.isWatching = false;
@@ -68,7 +68,7 @@ class FileWatcher {
   async processExistingFiles() {
     try {
       console.log('🔍 Scanning for existing CSV files...');
-      const files = await this.csvProcessor.getCSVFiles();
+      const files = getCSVFiles(this.watchedDir);
       
       if (files.length === 0) {
         console.log('📁 No existing CSV files found in directory');
@@ -79,7 +79,9 @@ class FileWatcher {
       
       for (const file of files) {
         const filePath = path.join(this.watchedDir, file);
-        await this.processNewFile(filePath);
+        if (!this.processedFiles.has(filePath)) {
+          await this.processNewFile(filePath);
+        }
       }
 
     } catch (error) {
@@ -121,26 +123,11 @@ class FileWatcher {
       console.log(`🔄 Processing file: ${path.basename(filePath)}`);
 
       // Process the CSV file
-      const domainId = 1; // Default to PD domain
       const collectedByUserId = 1; // Default admin user
-
-      const result = await this.csvProcessor.processCSVFile(
-        filePath,
-        domainId,
-        collectedByUserId
-      );
-
-            if (result.success) {
-        console.log(`✅ Successfully processed ${path.basename(filePath)}: ${result.recordsProcessed} records`);
-        this.processedFiles.add(filePath);
-        
-        // Move processed file to archive folder
-        await this.archiveFile(filePath);
-        
-      } else {
-        console.error(`❌ Failed to process ${path.basename(filePath)}: ${result.message}`);
-      }
-
+      await processCSVFile(filePath, this.db, collectedByUserId);
+      this.processedFiles.add(filePath);
+      // Move processed file to archive folder
+      await this.archiveFile(filePath);
     } catch (error) {
       console.error(`❌ Error processing file ${path.basename(filePath)}:`, error);
     }

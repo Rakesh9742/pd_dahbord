@@ -3,7 +3,6 @@ import './ManagerView.css'; // Reuse styles for consistency
 
 const columns = [
   { key: 'block_name', label: 'Block Name' },
-  { key: 'user_name', label: 'User Name' },
   { key: 'RTL_tag', label: 'RTL Tag' },
   { key: 'experiment', label: 'Experiment' },
   { key: 'run_directory', label: 'Run Dir' },
@@ -32,15 +31,15 @@ const columns = [
   { key: 'qms_status', label: 'QMS' }
 ];
 
-const LeadView = ({ user }) => {
+const LeadView = ({ user, projectFilters = {} }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [filters, setFilters] = useState({
     block_name: '',
-    user_name: '',
     stage: '',
-    domain_id: ''
+    domain_id: '',
+    project_id: ''
   });
   const [filterInputs, setFilterInputs] = useState(filters);
   const [pagination, setPagination] = useState({
@@ -49,7 +48,6 @@ const LeadView = ({ user }) => {
     total: 0
   });
   const [blockNameOptions, setBlockNameOptions] = useState([]);
-  const [userNameOptions, setUserNameOptions] = useState([]);
   const [stageOptions, setStageOptions] = useState([]);
 
   // Fetch dropdown options
@@ -57,7 +55,7 @@ const LeadView = ({ user }) => {
     const fetchOptions = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch('/api/data/filter-options', {
+        const response = await fetch('http://localhost:5000/api/data/filter-options', {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
@@ -67,8 +65,8 @@ const LeadView = ({ user }) => {
           const result = await response.json();
           setBlockNameOptions(result.blocks || []);
           
-          // Fetch unique user names and stages from lead data
-          const leadRes = await fetch('/api/data/lead-data?limit=1000', {
+          // Fetch unique stages from lead data
+          const leadRes = await fetch('http://localhost:5000/api/data/lead-data?limit=1000', {
             headers: {
               'Authorization': `Bearer ${token}`,
               'Content-Type': 'application/json'
@@ -76,9 +74,7 @@ const LeadView = ({ user }) => {
           });
           if (leadRes.ok) {
             const leadData = await leadRes.json();
-            const uniqueUserNames = Array.from(new Set((leadData.data || []).map(row => row.user_name).filter(Boolean)));
             const uniqueStages = Array.from(new Set((leadData.data || []).map(row => row.current_stage).filter(Boolean)));
-            setUserNameOptions(uniqueUserNames);
             setStageOptions(uniqueStages);
           }
         }
@@ -104,12 +100,16 @@ const LeadView = ({ user }) => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
+      // Only include filters that have a value
+      const filterParams = Object.fromEntries(
+        Object.entries(filters).filter(([_, v]) => v)
+      );
       const queryParams = new URLSearchParams({
-        ...filters,
+        ...filterParams,
         limit: pagination.limit,
         offset: (pagination.current - 1) * pagination.limit
       });
-      const response = await fetch(`/api/data/lead-data?${queryParams}`, {
+      const response = await fetch(`http://localhost:5000/api/data/lead-data?${queryParams}`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -132,9 +132,36 @@ const LeadView = ({ user }) => {
   };
 
   useEffect(() => {
-    fetchLeadData();
+    // Only fetch data if we have meaningful filters or if this is the initial load
+    if (filters.domain_id || filters.project_id || filters.block_name || filters.stage) {
+      fetchLeadData();
+    } else if (!loading && data.length === 0) {
+      // Initial load - fetch all data
+      fetchLeadData();
+    }
     // eslint-disable-next-line
   }, [filters, pagination.current]);
+
+  // Update filters when projectFilters prop changes
+  useEffect(() => {
+    setFilters(prevFilters => {
+      const newFilters = {
+        ...prevFilters,
+        domain_id: projectFilters?.domain_id || '',
+        project_id: projectFilters?.project_id || ''
+      };
+      // Only update if the filters actually changed
+      if (prevFilters.domain_id !== newFilters.domain_id || prevFilters.project_id !== newFilters.project_id) {
+        setFilterInputs(newFilters);
+        return newFilters;
+      }
+      return prevFilters;
+    });
+  }, [projectFilters]);
+
+  // Debug: Log when component mounts
+  useEffect(() => {
+  }, []);
 
   const handleFilterChange = (key, value) => {
     setFilters(prev => ({ ...prev, [key]: value }));
@@ -148,15 +175,15 @@ const LeadView = ({ user }) => {
   const clearFilters = () => {
     setFilters({
       block_name: '',
-      user_name: '',
       stage: '',
-      domain_id: ''
+      domain_id: '',
+      project_id: ''
     });
     setFilterInputs({
       block_name: '',
-      user_name: '',
       stage: '',
-      domain_id: ''
+      domain_id: '',
+      project_id: ''
     });
     setPagination(prev => ({ ...prev, current: 1 }));
   };
@@ -228,7 +255,7 @@ const LeadView = ({ user }) => {
   }
 
   const requiredKeys = [
-    'block_name', 'user_name', 'RTL_tag', 'current_stage', 'run_status', 'runtime_seconds',
+    'block_name', 'RTL_tag', 'current_stage', 'run_status', 'runtime_seconds',
     'interface_timing', 'internal_timing', 'max_tran_wns_nvp', 'max_cap_wns_nvp', 'area',
     'utilization', 'tickets_priority', 'qms_status', 'run_end_time'
   ];
@@ -241,12 +268,12 @@ const LeadView = ({ user }) => {
   });
 
   return (
-    <div className="manager-view">
+    <div className={`manager-view ${(projectFilters.project_id || projectFilters.domain_id) ? 'filters-active' : ''}`}>
       {/* Header Section */}
       <div className="view-header">
         <div className="header-content">
           <h2>Lead Dashboard</h2>
-          <p>Detailed block data for project leads</p>
+          <p>Latest stage data for each block - showing most recent data per stage</p>
         </div>
         <div className="header-actions">
           <button onClick={clearFilters} className="btn btn-outline">
@@ -278,30 +305,12 @@ const LeadView = ({ user }) => {
             value={filterInputs.block_name}
             onChange={e => {
               handleInputChange('block_name', e.target.value);
-              setFilters(prev => ({ ...prev, block_name: e.target.value }));
-              setPagination(prev => ({ ...prev, current: 1 }));
+              handleFilterChange('block_name', e.target.value);
             }}
             style={{ padding: '8px 12px', borderRadius: 8, border: '1px solid #e2e8f0', fontSize: 14 }}
           >
             <option value="">All</option>
             {blockNameOptions.map(name => (
-              <option key={name} value={name}>{name}</option>
-            ))}
-          </select>
-
-          <label htmlFor="user-name-filter" style={{ fontWeight: 600 }}>User Name:</label>
-          <select
-            id="user-name-filter"
-            value={filterInputs.user_name}
-            onChange={e => {
-              handleInputChange('user_name', e.target.value);
-              setFilters(prev => ({ ...prev, user_name: e.target.value }));
-              setPagination(prev => ({ ...prev, current: 1 }));
-            }}
-            style={{ padding: '8px 12px', borderRadius: 8, border: '1px solid #e2e8f0', fontSize: 14 }}
-          >
-            <option value="">All</option>
-            {userNameOptions.map(name => (
               <option key={name} value={name}>{name}</option>
             ))}
           </select>
@@ -312,8 +321,7 @@ const LeadView = ({ user }) => {
             value={filterInputs.stage}
             onChange={e => {
               handleInputChange('stage', e.target.value);
-              setFilters(prev => ({ ...prev, stage: e.target.value }));
-              setPagination(prev => ({ ...prev, current: 1 }));
+              handleFilterChange('stage', e.target.value);
             }}
             style={{ padding: '8px 12px', borderRadius: 8, border: '1px solid #e2e8f0', fontSize: 14 }}
           >
@@ -329,7 +337,6 @@ const LeadView = ({ user }) => {
             <thead>
               <tr>
                 <th className="px-4 py-3 text-left uppercase text-xs font-semibold sticky top-0 z-10" style={{color: '#222', fontWeight: 'bold'}}>Block Name</th>
-                <th className="px-4 py-3 text-left uppercase text-xs font-semibold sticky top-0 z-10" style={{color: '#222', fontWeight: 'bold'}}>User Name</th>
                 <th className="px-4 py-3 text-left uppercase text-xs font-semibold sticky top-0 z-10" style={{color: '#222', fontWeight: 'bold'}}>RTL Tag</th>
                 <th className="px-4 py-3 text-left uppercase text-xs font-semibold sticky top-0 z-10" style={{color: '#222', fontWeight: 'bold'}}>Current Stage</th>
                 <th className="px-4 py-3 text-left uppercase text-xs font-semibold sticky top-0 z-10" style={{color: '#222', fontWeight: 'bold'}}>Run Status</th>
@@ -349,7 +356,6 @@ const LeadView = ({ user }) => {
               {normalizedData.map((row, index) => (
                 <tr key={index} className={`data-row ${index % 2 === 0 ? 'even-row' : 'odd-row'}`}> 
                   <td className="px-4 py-3" style={{color: '#222'}}>{sanitizeCell(row.block_name)}</td>
-                  <td className="px-4 py-3" style={{color: '#222'}}>{sanitizeCell(row.user_name)}</td>
                   <td className="px-4 py-3" style={{color: '#222'}}>{sanitizeCell(row.RTL_tag)}</td>
                   <td className="px-4 py-3" style={{color: '#222'}}>{sanitizeCell(row.current_stage)}</td>
                   <td className="px-4 py-3" style={{color: '#222'}}>

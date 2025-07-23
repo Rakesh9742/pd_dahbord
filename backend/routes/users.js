@@ -27,7 +27,7 @@ const requireAdmin = async (req, res, next) => {
 router.get('/', auth, requireAdmin, async (req, res) => {
   try {
     const [users] = await pool.execute(
-      'SELECT u.id, u.name, u.email, u.is_active, u.created_at, r.role_name FROM users u JOIN user_roles r ON u.role_id = r.id ORDER BY u.created_at DESC'
+      'SELECT u.id, u.name, u.email, u.is_active, u.created_at, r.role_name, COALESCE((SELECT JSON_ARRAYAGG(project_id) FROM project_users pu WHERE pu.user_id = u.id AND pu.is_active = 1), JSON_ARRAY()) AS project_ids FROM users u JOIN user_roles r ON u.role_id = r.id ORDER BY u.created_at DESC'
     );
 
     res.json({ users });
@@ -83,6 +83,16 @@ router.post('/', auth, requireAdmin, async (req, res) => {
       'SELECT u.id, u.name, u.email, u.is_active, u.created_at, r.role_name FROM users u JOIN user_roles r ON u.role_id = r.id WHERE u.id = ?',
       [result.insertId]
     );
+    // Assign projects to customer if provided
+    const projectIds = req.body.project_ids;
+    if (role_name === 'Customer' && Array.isArray(projectIds)) {
+      for (const pid of projectIds) {
+        await pool.execute(
+          'INSERT IGNORE INTO project_users (project_id, user_id) VALUES (?, ?)',
+          [pid, result.insertId]
+        );
+      }
+    }
 
     res.status(201).json({
       message: 'User created successfully',
@@ -161,6 +171,20 @@ router.put('/:id', auth, requireAdmin, async (req, res) => {
       [id]
     );
 
+    // Handle project assignments for customers if provided
+    const projectIds = req.body.project_ids;
+    if (role_name === 'Customer' && Array.isArray(projectIds)) {
+      // Remove existing assignments
+      await pool.execute('DELETE FROM project_users WHERE user_id = ?', [id]);
+      // Assign new projects
+      for (const pid of projectIds) {
+        await pool.execute(
+          'INSERT IGNORE INTO project_users (project_id, user_id) VALUES (?, ?)',
+          [pid, id]
+        );
+      }
+    }
+
     res.json({
       message: 'User updated successfully',
       user: updatedUsers[0]
@@ -187,13 +211,13 @@ router.delete('/:id', auth, requireAdmin, async (req, res) => {
       return res.status(404).json({ message: 'User not found' });
     }
 
-    // Soft delete by setting is_active to false
+    // Hard delete: actually remove the user
     await pool.execute(
-      'UPDATE users SET is_active = false WHERE id = ?',
+      'DELETE FROM users WHERE id = ?',
       [id]
     );
 
-    res.json({ message: 'User deactivated successfully' });
+    res.json({ message: 'User deleted successfully' });
 
   } catch (error) {
     console.error('Delete user error:', error);

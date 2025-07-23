@@ -1,0 +1,653 @@
+.project-filter-container {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.project-filter-container.filters-active {
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+}
+
+.filter-controls {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+}
+
+.filter-group label {
+  color: #ffffff;
+  font-weight: 500;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.filter-select {
+  padding: 12px 16px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+.filter-select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.filter-select option {
+  background: #2c3e50;
+  color: #ffffff;
+}
+
+.clear-filters-btn {
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  color: #ffffff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  min-width: 120px;
+}
+
+.clear-filters-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
+}
+
+.clear-filters-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* View Navigation Styles */
+.view-nav {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  perspective: 1000px;
+}
+
+.view-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  min-width: 120px;
+  justify-content: center;
+  position: relative;
+  transform-style: preserve-3d;
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+.view-nav-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.view-nav-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+  z-index: 2;
+}
+
+.view-nav-btn:hover {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.15) 100%);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-3px) rotateX(5deg);
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.2),
+    0 4px 10px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.view-nav-btn:hover::before {
+  opacity: 1;
+}
+
+.view-nav-btn:hover::after {
+  left: 100%;
+}
+
+.view-nav-btn:active {
+  transform: translateY(-1px) rotateX(2deg);
+  box-shadow: 
+    0 4px 15px rgba(0, 0, 0, 0.15),
+    0 2px 5px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.view-nav-btn.active {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.3) 100%);
+  border-color: rgba(255, 255, 255, 0.8);
+  transform: translateY(-2px) rotateX(3deg);
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.25),
+    0 3px 8px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  z-index: 1;
+}
+
+.view-nav-btn.active::before {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.2) 100%);
+  opacity: 1;
+}
+
+.view-nav-btn.active:hover {
+  transform: translateY(-4px) rotateX(6deg);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.3),
+    0 5px 15px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.view-nav-icon {
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+  z-index: 3;
+  position: relative;
+}
+
+.view-nav-btn:hover .view-nav-icon {
+  transform: scale(1.1) rotateY(10deg);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.view-nav-btn.active .view-nav-icon {
+  transform: scale(1.15);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+.view-nav-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  z-index: 3;
+  position: relative;
+}
+
+.view-nav-btn:hover .view-nav-label {
+  transform: translateX(2px);
+}
+
+.view-nav-btn.active .view-nav-label {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Add a subtle glow effect for active buttons */
+.view-nav-btn.active::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.2));
+  border-radius: 14px;
+  z-index: -1;
+  opacity: 0.4;
+  filter: blur(4px);
+  animation: glowPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes glowPulse {
+  0% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.6;
+    transform: scale(1.02);
+  }
+}
+
+/* Enhanced focus states for accessibility */
+.view-nav-btn:focus {
+  outline: none;
+  box-shadow: 
+    0 0 0 3px rgba(255, 255, 255, 0.3),
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.view-nav-btn.active:focus {
+  box-shadow: 
+    0 0 0 3px rgba(255, 255, 255, 0.5),
+    0 6px 20px rgba(0, 0, 0, 0.25),
+    0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Clicked state animation */
+.view-nav-btn.clicked {
+  transform: translateY(1px) rotateX(-2deg) scale(0.98);
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.15),
+    0 1px 3px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.view-nav-btn.clicked .view-nav-icon {
+  transform: scale(0.95);
+  transition: all 0.1s ease;
+}
+
+.view-nav-btn.clicked .view-nav-label {
+  transform: translateX(-1px);
+  transition: all 0.1s ease;
+}
+
+/* Compact view nav when filters are active */
+.project-filter-container.filters-active .view-nav {
+  margin-top: 16px;
+  padding-top: 16px;
+}
+
+.project-filter-container.filters-active .view-nav-btn {
+  padding: 8px 12px;
+  min-width: 100px;
+  font-size: 0.85rem;
+}
+
+/* Shrink filter header when view is selected */
+.project-filter-container.view-selected {
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-filter-container.view-selected .filter-controls {
+  gap: 12px;
+  justify-content: flex-start;
+}
+
+.project-filter-container.view-selected .filter-group {
+  min-width: 160px;
+}
+
+.project-filter-container.view-selected .filter-group label {
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+}
+
+.project-filter-container.view-selected .filter-select {
+  padding: 8px 12px;
+  font-size: 0.85rem;
+}
+
+.project-filter-container.view-selected .clear-filters-btn {
+  padding: 8px 16px;
+  min-width: 100px;
+  font-size: 0.85rem;
+}
+
+.project-filter-container.view-selected .view-nav {
+  margin-top: 12px;
+  padding-top: 12px;
+  gap: 8px;
+}
+
+.project-filter-container.view-selected .view-nav-btn {
+  padding: 6px 10px;
+  min-width: 90px;
+  font-size: 0.8rem;
+}
+
+.project-filter-container.view-selected .view-nav-icon {
+  font-size: 1rem;
+}
+
+.project-filter-container.view-selected .view-nav-label {
+  font-size: 0.8rem;
+}
+
+/* Enhanced transition for smooth shrinking */
+.project-filter-container {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-filter-container.view-selected .filter-controls,
+.project-filter-container.view-selected .view-nav {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-filter-container.view-selected .filter-group,
+.project-filter-container.view-selected .filter-select,
+.project-filter-container.view-selected .clear-filters-btn,
+.project-filter-container.view-selected .view-nav-btn {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* View Button Container Styles */
+.view-button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.view-button-container:hover {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 1) 0%, rgba(118, 75, 162, 1) 100%);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.view-button-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.view-button-project {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.view-button-domain {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.view-button-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.view-button-change,
+.view-button-clear {
+  padding: 6px 12px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.view-button-change:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
+}
+
+.view-button-clear {
+  background: rgba(234, 84, 85, 0.2);
+  border-color: rgba(234, 84, 85, 0.3);
+  color: #ffffff;
+}
+
+.view-button-clear:hover {
+  background: rgba(234, 84, 85, 0.3);
+  border-color: rgba(234, 84, 85, 0.5);
+  transform: translateY(-1px);
+}
+
+/* Animation for view button appearance */
+.project-filter-container.view-selected {
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 12px;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+}
+
+.project-filter-container.view-selected .view-button-container {
+  animation: slideInUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.filter-error {
+  margin-top: 16px;
+  padding: 12px;
+  background: rgba(231, 76, 60, 0.2);
+  border: 1px solid rgba(231, 76, 60, 0.3);
+  border-radius: 8px;
+  color: #ffffff;
+}
+
+.filter-error p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.project-filter-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.loading-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid #ffffff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 12px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.project-filter-loading p {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .project-filter-container {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  .project-filter-container.filters-active {
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+
+  .project-filter-container.view-selected {
+    padding: 8px 12px;
+    margin-bottom: 8px;
+  }
+
+  .view-button-container {
+    padding: 10px 12px;
+  }
+
+  .view-button-info {
+    gap: 6px;
+  }
+
+  .view-button-project {
+    font-size: 0.9rem;
+  }
+
+  .view-button-domain {
+    font-size: 0.8rem;
+  }
+
+  .view-button-actions {
+    gap: 6px;
+  }
+
+  .view-button-change,
+  .view-button-clear {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
+
+  .filter-controls {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .filter-group {
+    min-width: 100%;
+  }
+
+  .clear-filters-btn {
+    width: 100%;
+  }
+
+  .view-nav {
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px;
+    padding-top: 16px;
+  }
+
+  .view-nav-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-filter-container {
+    padding: 12px;
+  }
+
+  .project-filter-container.filters-active {
+    padding: 8px;
+  }
+
+  .project-filter-container.view-selected {
+    padding: 6px 8px;
+    margin-bottom: 6px;
+  }
+
+  .view-button-container {
+    padding: 8px 10px;
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+  }
+
+  .view-button-info {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .view-button-actions {
+    justify-content: center;
+  }
+
+  .view-button-change,
+  .view-button-clear {
+    flex: 1;
+    padding: 6px 8px;
+    font-size: 0.7rem;
+  }
+
+  .filter-select {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+
+  .view-nav-btn {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+
+  .view-nav-icon {
+    font-size: 1rem;
+  }
+
+  .view-nav-label {
+    font-size: 0.8rem;
+  }
+} 

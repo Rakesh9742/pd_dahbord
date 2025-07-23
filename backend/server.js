@@ -8,6 +8,7 @@ const userRoutes = require('./routes/users');
 const dataRoutes = require('./routes/data');
 const duplicateErrorsRoutes = require('./routes/duplicateErrors');
 const FileWatcher = require('./utils/fileWatcher');
+const dvDataRoute = require('./routes/dvData');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -19,6 +20,9 @@ app.use(cors({
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Serve static files from uploads directory
+app.use('/uploads', express.static('uploads'));
 
 // Test database connection
 testConnection();
@@ -39,6 +43,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/data', dataRoutes);
 app.use('/api/data', duplicateErrorsRoutes);
+app.use('/api/dv-data', dvDataRoute);
 
 // Health check route
 app.get('/api/health', (req, res) => {

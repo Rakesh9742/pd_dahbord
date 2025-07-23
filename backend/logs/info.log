@@ -1,0 +1,154 @@
+[2025-07-12T08:22:52.167Z] [logs-api] [INFO] Logs cleared by user
+[2025-07-15T05:08:48.068Z] [PD_dashboard_proj2_blk2 (1).csv] [INFO] Starting database insertion for 3 records
+[2025-07-15T05:08:48.072Z] [PD_dashboard_proj2_blk2 (1).csv] [INFO] Processing record: proj2 - blk2 - exp1
+[2025-07-15T05:08:48.095Z] [CSVProcessor] [INFO] SUCCESS: Database Insert - {"project":"proj2","block":"blk2","experiment":"exp1","insertId":12,"user":"user2","stage":"synthesis","status":"pass"}
+[2025-07-15T05:08:48.096Z] [PD_dashboard_proj2_blk2 (1).csv] [INFO] Processing record: proj2 - blk2 - exp1
+[2025-07-15T05:08:48.107Z] [CSVProcessor] [INFO] SUCCESS: Database Insert - {"project":"proj2","block":"blk2","experiment":"exp1","insertId":13,"user":"user2","stage":"Floorplan","status":"pass"}
+[2025-07-15T05:08:48.109Z] [PD_dashboard_proj2_blk2 (1).csv] [INFO] Processing record: proj2 - blk2 - exp1
+[2025-07-15T05:08:48.117Z] [CSVProcessor] [INFO] SUCCESS: Database Insert - {"project":"proj2","block":"blk2","experiment":"exp1","insertId":14,"user":"user2","stage":"Placement","status":"fail"}
+[2025-07-15T05:08:48.119Z] [PD_dashboard_proj2_blk2 (1).csv] [INFO] Successfully processed 3 records from CSV
+[2025-07-18T07:46:27.936Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Starting database insertion for 3 records
+[2025-07-18T07:46:27.942Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:46:27.961Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:46:27.969Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:49:07.936Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Starting database insertion for 3 records
+[2025-07-18T07:49:07.937Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:49:07.972Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:49:07.995Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:49:09.140Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Starting database insertion for 3 records
+[2025-07-18T07:49:09.142Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:49:09.171Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:49:09.204Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:50:48.425Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Starting database insertion for 3 records
+[2025-07-18T07:50:48.427Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:50:48.448Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:50:48.457Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:50:49.489Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Starting database insertion for 3 records
+[2025-07-18T07:50:49.491Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:50:49.498Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:50:49.504Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:51:35.986Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Starting database insertion for 3 records
+[2025-07-18T07:51:35.988Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:51:36.001Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:51:36.007Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:51:38.093Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Starting database insertion for 3 records
+[2025-07-18T07:51:38.094Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:51:38.105Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:51:38.112Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:51:39.138Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Starting database insertion for 3 records
+[2025-07-18T07:51:39.139Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:51:39.146Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:51:39.152Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:52:03.347Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Starting database insertion for 3 records
+[2025-07-18T07:52:03.349Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:52:03.364Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:52:03.372Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:52:04.397Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Starting database insertion for 3 records
+[2025-07-18T07:52:04.399Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:52:04.406Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:52:04.412Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:52:05.807Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Starting database insertion for 3 records
+[2025-07-18T07:52:05.809Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:52:05.821Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:52:05.828Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:52:06.853Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Starting database insertion for 3 records
+[2025-07-18T07:52:06.855Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:52:06.861Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:52:06.867Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:52:45.062Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Starting database insertion for 3 records
+[2025-07-18T07:52:45.064Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:52:45.079Z] [CSVProcessor] [INFO] SUCCESS: Database Insert - {"project":"proj1","block":"blk2","experiment":"exp1","insertId":1,"user":"user2","stage":"synthesis","status":"pass"}
+[2025-07-18T07:52:45.080Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:52:45.088Z] [CSVProcessor] [INFO] SUCCESS: Database Insert - {"project":"proj1","block":"blk2","experiment":"exp1","insertId":2,"user":"user2","stage":"Floorplan","status":"pass"}
+[2025-07-18T07:52:45.089Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T07:52:45.096Z] [CSVProcessor] [INFO] SUCCESS: Database Insert - {"project":"proj1","block":"blk2","experiment":"exp1","insertId":3,"user":"user2","stage":"Placement","status":"fail"}
+[2025-07-18T07:52:45.097Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Successfully processed 3 records from CSV
+[2025-07-18T07:58:36.660Z] [PD_dashboard_proj1_blk1 (3).csv] [INFO] Starting database insertion for 4 records
+[2025-07-18T07:58:36.661Z] [PD_dashboard_proj1_blk1 (3).csv] [INFO] Processing record: proj1 - blk1 - exp1
+[2025-07-18T07:58:36.678Z] [CSVProcessor] [INFO] SUCCESS: Database Insert - {"project":"proj1","block":"blk1","experiment":"exp1","insertId":4,"user":"user1","stage":"synthesis","status":"continue_with_error"}
+[2025-07-18T07:58:36.679Z] [PD_dashboard_proj1_blk1 (3).csv] [INFO] Processing record: proj1 - blk1 - exp1
+[2025-07-18T07:58:36.693Z] [CSVProcessor] [INFO] SUCCESS: Database Insert - {"project":"proj1","block":"blk1","experiment":"exp1","insertId":5,"user":"user1","stage":"Floorplan","status":"pass"}
+[2025-07-18T07:58:36.694Z] [PD_dashboard_proj1_blk1 (3).csv] [INFO] Processing record: proj1 - blk1 - exp1
+[2025-07-18T07:58:36.707Z] [CSVProcessor] [INFO] SUCCESS: Database Insert - {"project":"proj1","block":"blk1","experiment":"exp1","insertId":6,"user":"user1","stage":"Placement","status":"fail"}
+[2025-07-18T07:58:36.709Z] [PD_dashboard_proj1_blk1 (3).csv] [INFO] Processing record: proj1 - blk1 - exp2
+[2025-07-18T07:58:36.726Z] [CSVProcessor] [INFO] SUCCESS: Database Insert - {"project":"proj1","block":"blk1","experiment":"exp2","insertId":7,"user":"user1","stage":"Synthesis","status":"continue_with_error"}
+[2025-07-18T07:58:36.728Z] [PD_dashboard_proj1_blk1 (3).csv] [INFO] Successfully processed 4 records from CSV
+[2025-07-18T08:03:34.514Z] [PD_dashboard_proj1_blk3 (1).csv] [INFO] Starting database insertion for 4 records
+[2025-07-18T08:03:34.515Z] [PD_dashboard_proj1_blk3 (1).csv] [INFO] Processing record: proj1 - blk3 - exp1
+[2025-07-18T08:03:34.523Z] [CSVProcessor] [INFO] SUCCESS: Database Insert - {"project":"proj1","block":"blk3","experiment":"exp1","insertId":8,"user":"user1","stage":"synthesis","status":"continue_with_error"}
+[2025-07-18T08:03:34.524Z] [PD_dashboard_proj1_blk3 (1).csv] [INFO] Processing record: proj1 - blk3 - exp1
+[2025-07-18T08:03:34.533Z] [CSVProcessor] [INFO] SUCCESS: Database Insert - {"project":"proj1","block":"blk3","experiment":"exp1","insertId":9,"user":"user2","stage":"Floorplan","status":"pass"}
+[2025-07-18T08:03:34.534Z] [PD_dashboard_proj1_blk3 (1).csv] [INFO] Processing record: proj1 - blk3 - exp1
+[2025-07-18T08:03:34.540Z] [CSVProcessor] [INFO] SUCCESS: Database Insert - {"project":"proj1","block":"blk3","experiment":"exp1","insertId":10,"user":"user1","stage":"Placement","status":"fail"}
+[2025-07-18T08:03:34.541Z] [PD_dashboard_proj1_blk3 (1).csv] [INFO] Processing record: proj1 - blk3 - exp2
+[2025-07-18T08:03:34.547Z] [CSVProcessor] [INFO] SUCCESS: Database Insert - {"project":"proj1","block":"blk3","experiment":"exp2","insertId":11,"user":"user1","stage":"Synthesis","status":"continue_with_error"}
+[2025-07-18T08:03:34.548Z] [PD_dashboard_proj1_blk3 (1).csv] [INFO] Successfully processed 4 records from CSV
+[2025-07-18T08:04:03.851Z] [PD_dashboard_proj2_blk2 (2).csv] [INFO] Starting database insertion for 3 records
+[2025-07-18T08:04:03.852Z] [PD_dashboard_proj2_blk2 (2).csv] [INFO] Processing record: proj2 - blk2 - exp1
+[2025-07-18T08:04:03.868Z] [CSVProcessor] [INFO] SUCCESS: Database Insert - {"project":"proj2","block":"blk2","experiment":"exp1","insertId":12,"user":"user2","stage":"synthesis","status":"pass"}
+[2025-07-18T08:04:03.869Z] [PD_dashboard_proj2_blk2 (2).csv] [INFO] Processing record: proj2 - blk2 - exp1
+[2025-07-18T08:04:03.877Z] [CSVProcessor] [INFO] SUCCESS: Database Insert - {"project":"proj2","block":"blk2","experiment":"exp1","insertId":13,"user":"user2","stage":"Floorplan","status":"pass"}
+[2025-07-18T08:04:03.879Z] [PD_dashboard_proj2_blk2 (2).csv] [INFO] Processing record: proj2 - blk2 - exp1
+[2025-07-18T08:04:03.887Z] [CSVProcessor] [INFO] SUCCESS: Database Insert - {"project":"proj2","block":"blk2","experiment":"exp1","insertId":14,"user":"user2","stage":"Placement","status":"fail"}
+[2025-07-18T08:04:03.889Z] [PD_dashboard_proj2_blk2 (2).csv] [INFO] Successfully processed 3 records from CSV
+[2025-07-18T08:25:47.623Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Starting database insertion for 3 records
+[2025-07-18T08:25:47.628Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T08:25:47.637Z] [CSVProcessor] [INFO] SUCCESS: Database Insert - {"project":"proj1","block":"blk2","experiment":"exp1","insertId":15,"user":"user2","stage":"synthesis","status":"pass"}
+[2025-07-18T08:25:47.638Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T08:25:47.645Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T08:25:47.656Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Successfully processed 3 records from CSV
+[2025-07-18T08:37:51.584Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Starting database insertion for 3 records
+[2025-07-18T08:37:51.585Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T08:37:51.605Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T08:37:51.616Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T08:39:18.622Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Starting database insertion for 3 records
+[2025-07-18T08:39:18.624Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk4exp1 - bronze
+[2025-07-18T08:39:18.647Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T08:39:18.660Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T08:40:57.941Z] [PD_dashboard_proj2_blk2 (3).csv] [INFO] Starting database insertion for 3 records
+[2025-07-18T08:40:57.942Z] [PD_dashboard_proj2_blk2 (3).csv] [INFO] Processing record: proj2 - blk4 - exp1
+[2025-07-18T08:40:57.958Z] [CSVProcessor] [INFO] SUCCESS: Database Insert - {"project":"proj2","block":"blk4","experiment":"exp1","insertId":16,"user":"user2","stage":"synthesis","status":"pass"}
+[2025-07-18T08:40:57.960Z] [PD_dashboard_proj2_blk2 (3).csv] [INFO] Processing record: proj2 - blk2 - exp1
+[2025-07-18T08:40:57.968Z] [PD_dashboard_proj2_blk2 (3).csv] [INFO] Processing record: proj2 - blk2 - exp1
+[2025-07-18T08:40:57.977Z] [PD_dashboard_proj2_blk2 (3).csv] [INFO] Successfully processed 3 records from CSV
+[2025-07-18T10:57:42.042Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Starting database insertion for 3 records
+[2025-07-18T10:57:42.046Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk4exp1 - bronze
+[2025-07-18T10:57:42.094Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T10:57:42.104Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T10:57:43.142Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Starting database insertion for 3 records
+[2025-07-18T10:57:43.143Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk4exp1 - bronze
+[2025-07-18T10:57:43.155Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T10:57:43.165Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T11:15:32.741Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Starting database insertion for 3 records
+[2025-07-18T11:15:32.744Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk4exp1 - bronze
+[2025-07-18T11:15:32.761Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T11:15:32.768Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T11:15:33.801Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Starting database insertion for 3 records
+[2025-07-18T11:15:33.804Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk4exp1 - bronze
+[2025-07-18T11:15:33.814Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-18T11:15:33.821Z] [PD_dashboard_proj1_blk2 (2).csv] [INFO] Processing record: proj1 - blk2 - exp1
+[2025-07-21T05:25:41.744Z] [sample_multi_domain.csv] [INFO] Starting database insertion for 12 records
+[2025-07-21T05:25:41.746Z] [sample_multi_domain.csv] [INFO] Processing record: proj1 - blk1 - exp1
+[2025-07-21T05:25:41.759Z] [CSVProcessor] [INFO] SUCCESS: Database Insert - {"project":"proj1","block":"blk1","experiment":"exp1","insertId":17,"user":"user1","stage":"synthesis","status":"pass"}
+[2025-07-21T05:25:41.760Z] [sample_multi_domain.csv] [INFO] Processing record: proj1 - blk1 - exp1
+[2025-07-21T05:25:41.766Z] [sample_multi_domain.csv] [INFO] Processing record: proj1 - blk1 - exp1
+[2025-07-21T05:25:41.773Z] [sample_multi_domain.csv] [INFO] Processing record: proj2 - blk1 - exp1
+[2025-07-21T05:25:41.784Z] [CSVProcessor] [INFO] SUCCESS: Database Insert - {"project":"proj2","block":"blk1","experiment":"exp1","insertId":18,"user":"user2","stage":"synthesis","status":"pass"}
+[2025-07-21T05:25:41.784Z] [sample_multi_domain.csv] [INFO] Processing record: proj2 - blk1 - exp1
+[2025-07-21T05:25:41.790Z] [sample_multi_domain.csv] [INFO] Processing record: proj3 - blk1 - exp1
+[2025-07-21T05:25:41.801Z] [CSVProcessor] [INFO] SUCCESS: Database Insert - {"project":"proj3","block":"blk1","experiment":"exp1","insertId":19,"user":"user3","stage":"simulation","status":"pass"}
+[2025-07-21T05:25:41.802Z] [sample_multi_domain.csv] [INFO] Processing record: proj3 - blk1 - exp1
+[2025-07-21T05:25:41.807Z] [sample_multi_domain.csv] [INFO] Processing record: proj4 - blk1 - exp1
+[2025-07-21T05:25:41.818Z] [CSVProcessor] [INFO] SUCCESS: Database Insert - {"project":"proj4","block":"blk1","experiment":"exp1","insertId":20,"user":"user4","stage":"clock_synthesis","status":"pass"}
+[2025-07-21T05:25:41.820Z] [sample_multi_domain.csv] [INFO] Processing record: proj4 - blk1 - exp1
+[2025-07-21T05:25:41.826Z] [sample_multi_domain.csv] [INFO] Processing record: proj5 - blk1 - exp1
+[2025-07-21T05:25:41.837Z] [CSVProcessor] [INFO] SUCCESS: Database Insert - {"project":"proj5","block":"blk1","experiment":"exp1","insertId":21,"user":"user5","stage":"custom_layout","status":"pass"}
+[2025-07-21T05:25:41.838Z] [sample_multi_domain.csv] [INFO] Processing record: proj6 - blk1 - exp1
+[2025-07-21T05:25:41.847Z] [CSVProcessor] [INFO] SUCCESS: Database Insert - {"project":"proj6","block":"blk1","experiment":"exp1","insertId":22,"user":"user6","stage":"scan_insertion","status":"pass"}
+[2025-07-21T05:25:41.848Z] [sample_multi_domain.csv] [INFO] Processing record: proj6 - blk1 - exp1
+[2025-07-21T05:25:41.853Z] [CSVProcessor] [INFO] SUCCESS: Database Insert - {"project":"proj6","block":"blk1","experiment":"exp1","insertId":23,"user":"user6","stage":"test_generation","status":"pass"}
+[2025-07-21T05:25:41.856Z] [sample_multi_domain.csv] [INFO] Successfully processed 12 records from CSV
+[2025-07-21T05:58:14.416Z] [DV Dashboard_Leader_View.csv] [INFO] Starting database insertion for 3 records
+[2025-07-21T05:58:14.418Z] [DV Dashboard_Leader_View.csv] [INFO] Processing record: undefined - undefined - undefined
+[2025-07-21T05:58:14.427Z] [DV Dashboard_Leader_View.csv] [INFO] Processing record: undefined - undefined - undefined
+[2025-07-21T05:58:14.431Z] [DV Dashboard_Leader_View.csv] [INFO] Processing record: undefined - undefined - undefined

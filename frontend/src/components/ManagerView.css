@@ -3,6 +3,30 @@
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   min-height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* Compact layout when filters are active */
+.filters-active .manager-view {
+  padding: 16px;
+}
+
+.filters-active .view-header {
+  padding: 20px 24px;
+  margin-bottom: 16px;
+}
+
+.filters-active .filters-section {
+  padding: 20px 24px;
+  margin-bottom: 16px;
+}
+
+.filters-active .data-table-container {
+  margin-top: 0;
+}
+
+.filters-active .table-header {
+  padding: 16px 24px;
 }
 
 /* Header Section */

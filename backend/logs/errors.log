@@ -1,0 +1,130 @@
+[2025-07-18T07:46:00.570Z] [PD_dashboard_proj1_blk2.csv] [ERROR] CSV Processing: No valid records found in PD_dashboard_proj1_blk2.csv
+[2025-07-18T07:46:00.572Z] [PD_dashboard_proj1_blk2.csv] [ERROR] No valid records found in CSV file
+[2025-07-18T07:46:27.956Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Unknown column 'user_name' in 'field list' for proj1 - blk2 - exp1
+[2025-07-18T07:46:27.967Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Unknown column 'user_name' in 'field list' for proj1 - blk2 - exp1
+[2025-07-18T07:46:27.975Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Unknown column 'user_name' in 'field list' for proj1 - blk2 - exp1
+[2025-07-18T07:46:27.977Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Database insertion errors: 3 records failed to insert
+[2025-07-18T07:46:27.978Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] No records were successfully inserted into the database
+[2025-07-18T07:46:27.982Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error in CSV processing: No records were successfully inserted into the database
+[2025-07-18T07:49:07.971Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Field 'user_id' doesn't have a default value for proj1 - blk2 - exp1
+[2025-07-18T07:49:07.994Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Field 'user_id' doesn't have a default value for proj1 - blk2 - exp1
+[2025-07-18T07:49:08.023Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Field 'user_id' doesn't have a default value for proj1 - blk2 - exp1
+[2025-07-18T07:49:08.026Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Database insertion errors: 3 records failed to insert
+[2025-07-18T07:49:08.027Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] No records were successfully inserted into the database
+[2025-07-18T07:49:08.029Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error in CSV processing: No records were successfully inserted into the database
+[2025-07-18T07:49:09.170Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Field 'user_id' doesn't have a default value for proj1 - blk2 - exp1
+[2025-07-18T07:49:09.201Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Field 'user_id' doesn't have a default value for proj1 - blk2 - exp1
+[2025-07-18T07:49:09.238Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Field 'user_id' doesn't have a default value for proj1 - blk2 - exp1
+[2025-07-18T07:49:09.240Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Database insertion errors: 3 records failed to insert
+[2025-07-18T07:49:09.241Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] No records were successfully inserted into the database
+[2025-07-18T07:49:09.243Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error in CSV processing: No records were successfully inserted into the database
+[2025-07-18T07:50:48.447Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Field 'user_id' doesn't have a default value for proj1 - blk2 - exp1
+[2025-07-18T07:50:48.456Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Field 'user_id' doesn't have a default value for proj1 - blk2 - exp1
+[2025-07-18T07:50:48.463Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Field 'user_id' doesn't have a default value for proj1 - blk2 - exp1
+[2025-07-18T07:50:48.465Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Database insertion errors: 3 records failed to insert
+[2025-07-18T07:50:48.466Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] No records were successfully inserted into the database
+[2025-07-18T07:50:48.468Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error in CSV processing: No records were successfully inserted into the database
+[2025-07-18T07:50:49.497Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Field 'user_id' doesn't have a default value for proj1 - blk2 - exp1
+[2025-07-18T07:50:49.503Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Field 'user_id' doesn't have a default value for proj1 - blk2 - exp1
+[2025-07-18T07:50:49.510Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Field 'user_id' doesn't have a default value for proj1 - blk2 - exp1
+[2025-07-18T07:50:49.511Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Database insertion errors: 3 records failed to insert
+[2025-07-18T07:50:49.512Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] No records were successfully inserted into the database
+[2025-07-18T07:50:49.514Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error in CSV processing: No records were successfully inserted into the database
+[2025-07-18T07:51:36.000Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Field 'user_id' doesn't have a default value for proj1 - blk2 - exp1
+[2025-07-18T07:51:36.006Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Field 'user_id' doesn't have a default value for proj1 - blk2 - exp1
+[2025-07-18T07:51:36.013Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Field 'user_id' doesn't have a default value for proj1 - blk2 - exp1
+[2025-07-18T07:51:36.015Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Database insertion errors: 3 records failed to insert
+[2025-07-18T07:51:36.016Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] No records were successfully inserted into the database
+[2025-07-18T07:51:36.018Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error in CSV processing: No records were successfully inserted into the database
+[2025-07-18T07:51:38.104Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Field 'user_id' doesn't have a default value for proj1 - blk2 - exp1
+[2025-07-18T07:51:38.111Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Field 'user_id' doesn't have a default value for proj1 - blk2 - exp1
+[2025-07-18T07:51:38.118Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Field 'user_id' doesn't have a default value for proj1 - blk2 - exp1
+[2025-07-18T07:51:38.119Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Database insertion errors: 3 records failed to insert
+[2025-07-18T07:51:38.120Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] No records were successfully inserted into the database
+[2025-07-18T07:51:38.121Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error in CSV processing: No records were successfully inserted into the database
+[2025-07-18T07:51:39.146Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Field 'user_id' doesn't have a default value for proj1 - blk2 - exp1
+[2025-07-18T07:51:39.151Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Field 'user_id' doesn't have a default value for proj1 - blk2 - exp1
+[2025-07-18T07:51:39.158Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Field 'user_id' doesn't have a default value for proj1 - blk2 - exp1
+[2025-07-18T07:51:39.160Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Database insertion errors: 3 records failed to insert
+[2025-07-18T07:51:39.161Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] No records were successfully inserted into the database
+[2025-07-18T07:51:39.162Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error in CSV processing: No records were successfully inserted into the database
+[2025-07-18T07:52:03.363Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Field 'user_id' doesn't have a default value for proj1 - blk2 - exp1
+[2025-07-18T07:52:03.370Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Field 'user_id' doesn't have a default value for proj1 - blk2 - exp1
+[2025-07-18T07:52:03.379Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Field 'user_id' doesn't have a default value for proj1 - blk2 - exp1
+[2025-07-18T07:52:03.380Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Database insertion errors: 3 records failed to insert
+[2025-07-18T07:52:03.382Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] No records were successfully inserted into the database
+[2025-07-18T07:52:03.384Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error in CSV processing: No records were successfully inserted into the database
+[2025-07-18T07:52:04.405Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Field 'user_id' doesn't have a default value for proj1 - blk2 - exp1
+[2025-07-18T07:52:04.411Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Field 'user_id' doesn't have a default value for proj1 - blk2 - exp1
+[2025-07-18T07:52:04.418Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Field 'user_id' doesn't have a default value for proj1 - blk2 - exp1
+[2025-07-18T07:52:04.419Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Database insertion errors: 3 records failed to insert
+[2025-07-18T07:52:04.420Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] No records were successfully inserted into the database
+[2025-07-18T07:52:04.422Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error in CSV processing: No records were successfully inserted into the database
+[2025-07-18T07:52:05.820Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Field 'user_id' doesn't have a default value for proj1 - blk2 - exp1
+[2025-07-18T07:52:05.827Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Field 'user_id' doesn't have a default value for proj1 - blk2 - exp1
+[2025-07-18T07:52:05.833Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Field 'user_id' doesn't have a default value for proj1 - blk2 - exp1
+[2025-07-18T07:52:05.835Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Database insertion errors: 3 records failed to insert
+[2025-07-18T07:52:05.836Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] No records were successfully inserted into the database
+[2025-07-18T07:52:05.837Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error in CSV processing: No records were successfully inserted into the database
+[2025-07-18T07:52:06.860Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Field 'user_id' doesn't have a default value for proj1 - blk2 - exp1
+[2025-07-18T07:52:06.866Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Field 'user_id' doesn't have a default value for proj1 - blk2 - exp1
+[2025-07-18T07:52:06.871Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Field 'user_id' doesn't have a default value for proj1 - blk2 - exp1
+[2025-07-18T07:52:06.873Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Database insertion errors: 3 records failed to insert
+[2025-07-18T07:52:06.874Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] No records were successfully inserted into the database
+[2025-07-18T07:52:06.875Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error in CSV processing: No records were successfully inserted into the database
+[2025-07-18T08:25:47.644Z] [proj1_blk2_exp1] [ERROR] Duplicate entry: project=proj1, block=blk2, experiment=exp1, run_end_time=26/05/2025
+[2025-07-18T08:25:47.652Z] [proj1_blk2_exp1] [ERROR] Duplicate entry: project=proj1, block=blk2, experiment=exp1, run_end_time=27/05/2025
+[2025-07-18T08:37:51.604Z] [proj1_blk2_exp1] [ERROR] Duplicate entry: project=proj1, block=blk2, experiment=exp1, run_end_time=25/05/2025
+[2025-07-18T08:37:51.615Z] [proj1_blk2_exp1] [ERROR] Duplicate entry: project=proj1, block=blk2, experiment=exp1, run_end_time=26/05/2025
+[2025-07-18T08:37:51.626Z] [proj1_blk2_exp1] [ERROR] Duplicate entry: project=proj1, block=blk2, experiment=exp1, run_end_time=27/05/2025
+[2025-07-18T08:37:51.628Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] No records were successfully inserted into the database
+[2025-07-18T08:37:51.633Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error in CSV processing: No records were successfully inserted into the database
+[2025-07-18T08:39:18.645Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Unknown column 'NaN' in 'field list' for proj1 - blk4exp1 - bronze
+[2025-07-18T08:39:18.658Z] [proj1_blk2_exp1] [ERROR] Duplicate entry: project=proj1, block=blk2, experiment=exp1, run_end_time=26/05/2025
+[2025-07-18T08:39:18.671Z] [proj1_blk2_exp1] [ERROR] Duplicate entry: project=proj1, block=blk2, experiment=exp1, run_end_time=27/05/2025
+[2025-07-18T08:39:18.672Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Database insertion errors: 1 records failed to insert
+[2025-07-18T08:39:18.675Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] No records were successfully inserted into the database
+[2025-07-18T08:39:18.677Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error in CSV processing: No records were successfully inserted into the database
+[2025-07-18T08:40:57.967Z] [proj2_blk2_exp1] [ERROR] Duplicate entry: project=proj2, block=blk2, experiment=exp1, run_end_time=26/05/2025
+[2025-07-18T08:40:57.973Z] [proj2_blk2_exp1] [ERROR] Duplicate entry: project=proj2, block=blk2, experiment=exp1, run_end_time=27/05/2025
+[2025-07-18T10:57:42.092Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Unknown column 'NaN' in 'field list' for proj1 - blk4exp1 - bronze
+[2025-07-18T10:57:42.103Z] [proj1_blk2_exp1] [ERROR] Duplicate entry: project=proj1, block=blk2, experiment=exp1, run_end_time=26/05/2025
+[2025-07-18T10:57:42.115Z] [proj1_blk2_exp1] [ERROR] Duplicate entry: project=proj1, block=blk2, experiment=exp1, run_end_time=27/05/2025
+[2025-07-18T10:57:42.117Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Database insertion errors: 1 records failed to insert
+[2025-07-18T10:57:42.119Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] No records were successfully inserted into the database
+[2025-07-18T10:57:42.121Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error in CSV processing: No records were successfully inserted into the database
+[2025-07-18T10:57:43.153Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Unknown column 'NaN' in 'field list' for proj1 - blk4exp1 - bronze
+[2025-07-18T10:57:43.163Z] [proj1_blk2_exp1] [ERROR] Duplicate entry: project=proj1, block=blk2, experiment=exp1, run_end_time=26/05/2025
+[2025-07-18T10:57:43.175Z] [proj1_blk2_exp1] [ERROR] Duplicate entry: project=proj1, block=blk2, experiment=exp1, run_end_time=27/05/2025
+[2025-07-18T10:57:43.177Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Database insertion errors: 1 records failed to insert
+[2025-07-18T10:57:43.178Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] No records were successfully inserted into the database
+[2025-07-18T10:57:43.179Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error in CSV processing: No records were successfully inserted into the database
+[2025-07-18T11:15:32.760Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Unknown column 'NaN' in 'field list' for proj1 - blk4exp1 - bronze
+[2025-07-18T11:15:32.767Z] [proj1_blk2_exp1] [ERROR] Duplicate entry: project=proj1, block=blk2, experiment=exp1, run_end_time=26/05/2025
+[2025-07-18T11:15:32.775Z] [proj1_blk2_exp1] [ERROR] Duplicate entry: project=proj1, block=blk2, experiment=exp1, run_end_time=27/05/2025
+[2025-07-18T11:15:32.776Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Database insertion errors: 1 records failed to insert
+[2025-07-18T11:15:32.778Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] No records were successfully inserted into the database
+[2025-07-18T11:15:32.779Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error in CSV processing: No records were successfully inserted into the database
+[2025-07-18T11:15:33.812Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error inserting row: Unknown column 'NaN' in 'field list' for proj1 - blk4exp1 - bronze
+[2025-07-18T11:15:33.820Z] [proj1_blk2_exp1] [ERROR] Duplicate entry: project=proj1, block=blk2, experiment=exp1, run_end_time=26/05/2025
+[2025-07-18T11:15:33.826Z] [proj1_blk2_exp1] [ERROR] Duplicate entry: project=proj1, block=blk2, experiment=exp1, run_end_time=27/05/2025
+[2025-07-18T11:15:33.827Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Database insertion errors: 1 records failed to insert
+[2025-07-18T11:15:33.829Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] No records were successfully inserted into the database
+[2025-07-18T11:15:33.830Z] [PD_dashboard_proj1_blk2 (2).csv] [ERROR] Error in CSV processing: No records were successfully inserted into the database
+[2025-07-21T05:25:41.765Z] [proj1_blk1_exp1] [ERROR] Duplicate entry: project=proj1, block=blk1, experiment=exp1, run_end_time=15/01/2024
+[2025-07-21T05:25:41.773Z] [proj1_blk1_exp1] [ERROR] Duplicate entry: project=proj1, block=blk1, experiment=exp1, run_end_time=15/01/2024
+[2025-07-21T05:25:41.789Z] [proj2_blk1_exp1] [ERROR] Duplicate entry: project=proj2, block=blk1, experiment=exp1, run_end_time=16/01/2024
+[2025-07-21T05:25:41.806Z] [proj3_blk1_exp1] [ERROR] Duplicate entry: project=proj3, block=blk1, experiment=exp1, run_end_time=17/01/2024
+[2025-07-21T05:25:41.825Z] [proj4_blk1_exp1] [ERROR] Duplicate entry: project=proj4, block=blk1, experiment=exp1, run_end_time=18/01/2024
+[2025-07-21T05:34:53.008Z] [sample_dv_data.csv] [ERROR] CSV Processing: No valid records found in sample_dv_data.csv
+[2025-07-21T05:34:53.010Z] [sample_dv_data.csv] [ERROR] No valid records found in CSV file
+[2025-07-21T05:52:31.070Z] [DV Dashboard_Leader_View.csv] [ERROR] CSV Processing: No valid records found in DV Dashboard_Leader_View.csv
+[2025-07-21T05:52:31.071Z] [DV Dashboard_Leader_View.csv] [ERROR] No valid records found in CSV file
+[2025-07-21T05:58:14.426Z] [DV Dashboard_Leader_View.csv] [ERROR] Error inserting row: Column 'project_name' cannot be null for undefined - undefined - undefined
+[2025-07-21T05:58:14.430Z] [DV Dashboard_Leader_View.csv] [ERROR] Error inserting row: Column 'project_name' cannot be null for undefined - undefined - undefined
+[2025-07-21T05:58:14.434Z] [DV Dashboard_Leader_View.csv] [ERROR] Error inserting row: Column 'project_name' cannot be null for undefined - undefined - undefined
+[2025-07-21T05:58:14.435Z] [DV Dashboard_Leader_View.csv] [ERROR] Database insertion errors: 3 records failed to insert
+[2025-07-21T05:58:14.436Z] [DV Dashboard_Leader_View.csv] [ERROR] No records were successfully inserted into the database
+[2025-07-21T05:58:14.438Z] [DV Dashboard_Leader_View.csv] [ERROR] Error in CSV processing: No records were successfully inserted into the database
+[2025-07-21T05:59:11.202Z] [DV Dashboard_Leader_View.csv] [ERROR] CSV Processing: No valid records found in DV Dashboard_Leader_View.csv
+[2025-07-21T05:59:11.203Z] [DV Dashboard_Leader_View.csv] [ERROR] No valid records found in CSV file
